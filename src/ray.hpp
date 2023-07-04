@@ -3,7 +3,7 @@
 class ray{
     public:
         constexpr ray() = default;
-        constexpr ray (const point3& o, const vec3& dir) :  origin(o), direction(dir);
+        constexpr ray (const point3& o, const vec3& dir) :  origin(o), direction(glm::normalize(dir));
         constexpr inline point3 at(const real t) { return origin + t * direction; }
         constexpr inline point3 origin() { return origin; }
         constexpr inline vec3 direction() {return direction; }
